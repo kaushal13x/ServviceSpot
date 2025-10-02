@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 20% 8%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 20% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 190 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-poppins;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1d3a 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+  }
+
+  .neon-text-cyan {
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.8),
+                 0 0 20px rgba(0, 243, 255, 0.6),
+                 0 0 30px rgba(0, 243, 255, 0.4);
+  }
+
+  .neon-text-blue {
+    color: #0088ff;
+    text-shadow: 0 0 10px rgba(0, 136, 255, 0.8),
+                 0 0 20px rgba(0, 136, 255, 0.6),
+                 0 0 30px rgba(0, 136, 255, 0.4);
+  }
+
+  .neon-border-cyan {
+    border: 2px solid #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5),
+                inset 0 0 10px rgba(0, 243, 255, 0.2);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #00f3ff 0%, #0088ff 50%, #00ff88 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .grid-background {
+    background-image:
+      linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
